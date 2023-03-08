@@ -18,7 +18,6 @@ type
   //验证组件数据
 
   TFSM = class(TDataModule)
-    EditStyle1: TcxDefaultEditStyleController;
     SkinManager: TdxSkinController;
     Image16: TcxImageList;
     AlertManager1: TdxAlertWindowManager;

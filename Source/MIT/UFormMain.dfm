@@ -2,8 +2,8 @@ object fFormMain: TfFormMain
   Left = 0
   Top = 0
   Caption = #25968#25454#28857#20301#32534#36753#22120
-  ClientHeight = 400
-  ClientWidth = 601
+  ClientHeight = 500
+  ClientWidth = 710
   Color = clBtnFace
   Font.Charset = GB2312_CHARSET
   Font.Color = clWindowText
@@ -19,32 +19,31 @@ object fFormMain: TfFormMain
   object wPage1: TcxPageControl
     Left = 0
     Top = 48
-    Width = 601
-    Height = 332
+    Width = 710
+    Height = 319
     Align = alClient
     TabOrder = 0
-    Properties.ActivePage = SheetSrv
+    Properties.ActivePage = SheetPoint
     Properties.CustomButtons.Buttons = <>
     Properties.Images = FDM.ImgSmall
     Properties.Style = 11
-    Properties.TabPosition = tpBottom
-    ExplicitTop = 42
-    ClientRectBottom = 309
+    ClientRectBottom = 317
     ClientRectLeft = 2
-    ClientRectRight = 599
-    ClientRectTop = 2
+    ClientRectRight = 708
+    ClientRectTop = 23
     object SheetSrv: TcxTabSheet
       Caption = #26381#21153#22120
       ImageIndex = 4
-      object cxSplitter1: TcxSplitter
+      object Splitter1: TcxSplitter
         Left = 185
         Top = 0
         Width = 8
-        Height = 307
+        Height = 294
         HotZoneClassName = 'TcxSimpleStyle'
-        Control = GroupPath
+        Control = PanelPath
+        ExplicitHeight = 307
       end
-      object GroupPath: TcxGroupBox
+      object PanelPath: TcxGroupBox
         Left = 0
         Top = 0
         Align = alLeft
@@ -52,17 +51,16 @@ object fFormMain: TfFormMain
         ParentFont = False
         Style.BorderStyle = ebsNone
         TabOrder = 1
-        ExplicitHeight = 298
-        Height = 307
+        Height = 294
         Width = 185
         object TreePath: TcxTreeView
           Left = 2
           Top = 18
           Width = 181
-          Height = 287
+          Height = 274
           Align = alClient
           ParentFont = False
-          Style.BorderStyle = cbsNone
+          Style.BorderStyle = cbsUltraFlat
           Style.Edges = [bLeft, bTop, bRight, bBottom]
           StyleFocused.BorderStyle = cbsNone
           StyleHot.BorderStyle = cbsNone
@@ -83,7 +81,7 @@ object fFormMain: TfFormMain
           RowSelect = True
         end
       end
-      object GroupPoint: TcxGroupBox
+      object PanelPoint: TcxGroupBox
         Left = 193
         Top = 0
         Align = alClient
@@ -91,16 +89,13 @@ object fFormMain: TfFormMain
         ParentFont = False
         Style.BorderStyle = ebsNone
         TabOrder = 2
-        ExplicitLeft = 191
-        ExplicitWidth = 402
-        ExplicitHeight = 298
-        Height = 307
-        Width = 404
+        Height = 294
+        Width = 513
         object ListItems: TcxListView
           Left = 2
           Top = 18
-          Width = 400
-          Height = 287
+          Width = 509
+          Height = 274
           Align = alClient
           Columns = <
             item
@@ -117,7 +112,7 @@ object fFormMain: TfFormMain
           ParentFont = False
           ReadOnly = True
           RowSelect = True
-          Style.BorderStyle = cbsNone
+          Style.BorderStyle = cbsUltraFlat
           Style.Edges = [bLeft, bTop, bRight, bBottom]
           StyleFocused.BorderStyle = cbsNone
           StyleHot.BorderStyle = cbsNone
@@ -129,20 +124,137 @@ object fFormMain: TfFormMain
     object SheetPoint: TcxTabSheet
       Caption = #28857#20301#37197#32622
       ImageIndex = 7
+      object PanelGroup: TcxGroupBox
+        Left = 0
+        Top = 0
+        Align = alLeft
+        Caption = #20998#32452
+        ParentFont = False
+        Style.BorderStyle = ebsNone
+        TabOrder = 0
+        Height = 294
+        Width = 185
+        object TreeGroup: TcxTreeView
+          Left = 2
+          Top = 18
+          Width = 181
+          Height = 274
+          Align = alClient
+          ParentFont = False
+          Style.BorderStyle = cbsUltraFlat
+          Style.Edges = [bLeft, bTop, bRight, bBottom]
+          StyleFocused.BorderStyle = cbsNone
+          StyleHot.BorderStyle = cbsNone
+          TabOrder = 0
+          Items.NodeData = {
+            0301000000240000000000000000000000FFFFFFFFFFFFFFFF00000000000000
+            00090000000103310031003100220000000000000000000000FFFFFFFFFFFFFF
+            FF000000000000000000000000010232003200220000000000000000000000FF
+            FFFFFFFFFFFFFF00000000000000000000000001023200320020000000000000
+            0000000000FFFFFFFFFFFFFFFF00000000000000000000000001013200220000
+            000000000000000000FFFFFFFFFFFFFFFF000000000000000000000000010232
+            003200200000000000000000000000FFFFFFFFFFFFFFFF000000000000000000
+            00000001013200200000000000000000000000FFFFFFFFFFFFFFFF0000000000
+            00000000000000010132001E0000000000000000000000FFFFFFFFFFFFFFFF00
+            000000000000000000000001001E0000000000000000000000FFFFFFFFFFFFFF
+            FF0000000000000000000000000100220000000000000000000000FFFFFFFFFF
+            FFFFFF000000000000000000000000010232003200}
+          RowSelect = True
+        end
+      end
+      object cxSplitter1: TcxSplitter
+        Left = 185
+        Top = 0
+        Width = 8
+        Height = 294
+        HotZoneClassName = 'TcxSimpleStyle'
+        Control = PanelGroup
+      end
+      object cxGroupBox2: TcxGroupBox
+        Left = 193
+        Top = 0
+        Align = alClient
+        Caption = #28857#20301#21015#34920
+        ParentFont = False
+        Style.BorderStyle = ebsNone
+        TabOrder = 2
+        Height = 294
+        Width = 513
+        object ListPoint: TcxListView
+          Left = 2
+          Top = 18
+          Width = 509
+          Height = 274
+          Align = alClient
+          Columns = <
+            item
+            end
+            item
+            end
+            item
+            end>
+          Items.ItemData = {
+            056C0000000200000000000000FFFFFFFFFFFFFFFF00000000FFFFFFFF000000
+            00023100310000000000FFFFFFFFFFFFFFFF04000000FFFFFFFF000000000232
+            0031000232003200E871182B0232003200A091182B033200320032002893182B
+            03320032003200884A182BFFFFFFFFFFFFFFFF}
+          ParentFont = False
+          ReadOnly = True
+          RowSelect = True
+          Style.BorderStyle = cbsUltraFlat
+          Style.Edges = [bLeft, bTop, bRight, bBottom]
+          StyleFocused.BorderStyle = cbsNone
+          StyleHot.BorderStyle = cbsNone
+          TabOrder = 0
+          ViewStyle = vsReport
+        end
+      end
     end
   end
   object SBar1: TdxStatusBar
     Left = 0
-    Top = 380
-    Width = 601
+    Top = 480
+    Width = 710
     Height = 20
     Panels = <>
     PaintStyle = stpsOffice11
+    SimplePanelStyle.Active = True
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = []
+  end
+  object GroupInfo: TcxGroupBox
+    Left = 0
+    Top = 375
+    Align = alBottom
+    Caption = #36816#34892#26085#24535
+    ParentFont = False
+    Style.BorderStyle = ebsUltraFlat
+    TabOrder = 6
+    Height = 105
+    Width = 710
+    object MemoLog: TcxMemo
+      Left = 2
+      Top = 18
+      Align = alClient
+      Lines.Strings = (
+        'MemoLog')
+      ParentFont = False
+      Style.BorderStyle = ebsNone
+      TabOrder = 0
+      Height = 85
+      Width = 706
+    end
+  end
+  object Splitter2: TcxSplitter
+    Left = 0
+    Top = 367
+    Width = 710
+    Height = 8
+    AlignSplitter = salBottom
+    Control = GroupInfo
   end
   object BarMgr1: TdxBarManager
     Font.Charset = DEFAULT_CHARSET
@@ -333,6 +445,7 @@ object fFormMain: TfFormMain
       Visible = ivAlways
       ImageIndex = 2
       LargeImageIndex = 2
+      OnClick = BtnConnClick
     end
     object dxBarButton4: TdxBarButton
       Caption = #26029#24320#26381#21153
@@ -378,7 +491,6 @@ object fFormMain: TfFormMain
       ImageIndex = 15
       LargeImageIndex = 15
       PaintStyle = psCaptionGlyph
-      OnClick = BtnDelPointClick
     end
     object dxBarSubItem2: TdxBarSubItem
       Caption = #20851#20110
@@ -425,5 +537,24 @@ object fFormMain: TfFormMain
       Hint = '|'
       Visible = ivAlways
     end
+  end
+  object oServer1: TdOPCServer
+    Active = False
+    ClientName = 'dOPC DA Client'
+    KeepAlive = 0
+    Version = '4.37'
+    Protocol = coCOM
+    Params.Strings = (
+      'xml-user='
+      'xml-pass='
+      'xml-proxy=')
+    OPCGroups = <>
+    OPCGroupDefault.IsActive = True
+    OPCGroupDefault.UpdateRate = 1000
+    OPCGroupDefault.LocaleId = 0
+    OPCGroupDefault.TimeBias = 0
+    ConnectDelay = 300
+    Left = 24
+    Top = 144
   end
 end

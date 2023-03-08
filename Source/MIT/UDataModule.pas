@@ -8,7 +8,7 @@ interface
 
 uses
   System.SysUtils, System.Classes, System.ImageList, Vcl.ImgList, Vcl.Controls,
-  cxImageList, cxGraphics;
+  cxImageList, cxGraphics, ULibFun;
 
 type
   TFDM = class(TDataModule)
@@ -21,6 +21,7 @@ type
 
 var
   FDM: TFDM;
+  gSystem: TApplicationHelper.TAppParam;
 
 implementation
 

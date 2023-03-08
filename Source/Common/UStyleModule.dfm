@@ -3,24 +3,6 @@ object FSM: TFSM
   OnCreate = DataModuleCreate
   Height = 257
   Width = 438
-  object EditStyle1: TcxDefaultEditStyleController
-    EmulateStandardControlDrawing = True
-    Style.BorderColor = clSkyBlue
-    Style.Edges = [bBottom]
-    Style.Font.Charset = GB2312_CHARSET
-    Style.Font.Color = clBlack
-    Style.Font.Height = -12
-    Style.Font.Name = #23435#20307
-    Style.Font.Style = []
-    Style.TextColor = 4227072
-    Style.IsFontAssigned = True
-    StyleFocused.BorderColor = clBackground
-    StyleFocused.Color = clInfoBk
-    StyleHot.BorderColor = clBackground
-    Left = 93
-    Top = 127
-    PixelsPerInch = 96
-  end
   object SkinManager: TdxSkinController
     Kind = lfOffice11
     NativeStyle = False

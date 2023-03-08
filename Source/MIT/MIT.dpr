@@ -4,7 +4,8 @@ uses
   Vcl.Forms,
   UFormMain in 'UFormMain.pas' {fFormMain},
   UDataModule in 'UDataModule.pas' {FDM: TDataModule},
-  UStyleModule in '..\Common\UStyleModule.pas' {FSM: TDataModule};
+  UStyleModule in '..\Common\UStyleModule.pas' {FSM: TDataModule},
+  UFormGetServer in 'UFormGetServer.pas' {fFormGetServer};
 
 {$R *.res}
 

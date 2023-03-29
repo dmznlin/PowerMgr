@@ -65,7 +65,7 @@ implementation
 {$R *.dfm}
 
 uses
-  Winapi.Windows, UStyleModule, ULibFun;
+  Winapi.Windows, UDataModule, UStyleModule, ULibFun;
 
 //Date: 2023-03-08
 //Parm: 服务类型
@@ -116,12 +116,27 @@ begin
     Result := ShowModal = mrOk;
     if Result then
     begin
+      nServer.Active := False;
       nServer.ComputerName  := EditHosts.Text;
-      nServer.ServerName    := EditID.Text; // use always Class ID
+      nServer.Protocol  := FProtocol;
+
+      if FProtocol = coCOM then
+           nServer.ServerName := EditID.Text
+      else nServer.ServerName := EditURL.Text;
+
       nServer.Params.Values['xml-user'] := EditUser.Text;
       nServer.Params.Values['xml-pass'] := EditPass.Text;
       nServer.Params.Values['xml-proxy']:= EditProxy.Text;
-      nServer.Protocol  := FProtocol;
+
+      with gOPC.ServerInfo do
+      begin
+        FComputerName := EditHosts.Text;
+        FServerName   := EditName.Text;
+        FClassID      := EditID.Text;
+        FURL          := EditURL.Text;
+        FParams       := nServer.Params.Text;
+        FProtocol     := FProtocol;
+      end;
     end;
   finally
     Free;
@@ -246,6 +261,8 @@ begin
 end;
 
 procedure TfFormGetServer.BtnOKClick(Sender: TObject);
+var nHost,nPath: string;
+    nPos: Integer;
 begin
   if FProtocol = coCOM then
   begin
@@ -259,15 +276,34 @@ begin
   if FProtocol = coXML then
   begin
     EditURL.Text := Trim(EditURL.Text);
-    if EditURL.Text = '' then
+    nPos := Pos('//', EditURL.Text);
+    //url: http://host:port/path
+
+    if nPos < 3 then
     begin
       FSM.ShowMsg('请填写有效的URL地址');
       Exit;
     end;
 
-    EditHosts.Text := '';
-    EditName.Text := EditURL.Text;
-    EditID.Text := EditURL.Text;
+    nHost := EditURL.Text;
+    System.Delete(nHost, 1, nPos+1);
+    nPath := nHost;
+
+    nPos := Pos('/', nHost);
+    if nPos > 0 then
+    begin
+      nHost := Copy(nHost, 1, nPos-1);
+      System.Delete(nPath, 1, nPos);
+    end;
+
+    nPos := Pos(':', nHost);
+    if nPos > 0 then
+      nHost := Copy(nHost, 1, nPos-1);
+    //delete port
+
+    EditHosts.Text := nHost;
+    EditName.Text := nHost;
+    EditID.Text := nPath;
   end;
 
   ModalResult := mrOk;

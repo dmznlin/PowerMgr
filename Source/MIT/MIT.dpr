@@ -1,6 +1,7 @@
 program MIT;
 
 uses
+  FastMM4,
   Vcl.Forms,
   UFormMain in 'UFormMain.pas' {fFormMain},
   UDataModule in 'UDataModule.pas' {FDM: TDataModule},

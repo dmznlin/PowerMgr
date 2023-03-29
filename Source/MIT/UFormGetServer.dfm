@@ -31,16 +31,12 @@ object fFormGetServer: TfFormGetServer
     Properties.ActivePage = SheetXML
     Properties.CustomButtons.Buttons = <>
     OnPageChanging = wPagePageChanging
-    ExplicitWidth = 365
-    ExplicitHeight = 321
     ClientRectBottom = 368
     ClientRectRight = 348
     ClientRectTop = 23
     object SheetCOM: TcxTabSheet
       Caption = ' COM '
       ImageIndex = 0
-      ExplicitWidth = 289
-      ExplicitHeight = 170
       object PanelHost: TcxGroupBox
         Left = 0
         Top = 0
@@ -48,9 +44,6 @@ object fFormGetServer: TfFormGetServer
         Caption = #20027#26426#21015#34920
         ParentFont = False
         TabOrder = 0
-        ExplicitLeft = 5
-        ExplicitTop = 11
-        ExplicitWidth = 350
         DesignSize = (
           348
           62)
@@ -83,10 +76,6 @@ object fFormGetServer: TfFormGetServer
         Caption = #26381#21153#21015#34920
         ParentFont = False
         TabOrder = 1
-        ExplicitLeft = 5
-        ExplicitTop = 79
-        ExplicitWidth = 350
-        ExplicitHeight = 212
         Height = 203
         Width = 348
         object ListServer: TcxListBox
@@ -100,10 +89,6 @@ object fFormGetServer: TfFormGetServer
           ParentFont = False
           TabOrder = 0
           OnClick = ListServerClick
-          ExplicitLeft = 64
-          ExplicitTop = 72
-          ExplicitWidth = 121
-          ExplicitHeight = 97
         end
       end
       object PanelInfo: TcxGroupBox
@@ -113,7 +98,6 @@ object fFormGetServer: TfFormGetServer
         Caption = #35814#32454#20449#24687
         ParentFont = False
         TabOrder = 2
-        ExplicitTop = 275
         DesignSize = (
           348
           80)
@@ -156,8 +140,6 @@ object fFormGetServer: TfFormGetServer
     object SheetXML: TcxTabSheet
       Caption = ' XML '
       ImageIndex = 1
-      ExplicitWidth = 289
-      ExplicitHeight = 170
       object cxGroupBox1: TcxGroupBox
         Left = 0
         Top = 0
@@ -165,7 +147,6 @@ object fFormGetServer: TfFormGetServer
         Caption = #35814#32454#20449#24687
         ParentFont = False
         TabOrder = 0
-        ExplicitHeight = 125
         DesignSize = (
           348
           345)
@@ -248,8 +229,6 @@ object fFormGetServer: TfFormGetServer
     Caption = #30830#23450
     TabOrder = 1
     OnClick = BtnOKClick
-    ExplicitLeft = 217
-    ExplicitTop = 337
   end
   object BtnExit: TcxButton
     Left = 281
@@ -260,7 +239,5 @@ object fFormGetServer: TfFormGetServer
     Caption = #21462#28040
     ModalResult = 2
     TabOrder = 2
-    ExplicitLeft = 298
-    ExplicitTop = 337
   end
 end
